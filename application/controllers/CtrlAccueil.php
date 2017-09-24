@@ -12,9 +12,7 @@ class CtrlAccueil extends CI_Controller
     {
         $lActivite = $this->uri->segment(3);
         $this->load->model("Model_Formation");
-        //Appel de la méthode
         $data['lesFormations'] = $this->Model_Formation->GetAllFormationsByActivite($lActivite);
-        //Appel de la vue
         $this->load->view("v_formation",$data);
     }
     
@@ -22,9 +20,7 @@ class CtrlAccueil extends CI_Controller
     {
         $lAgent = $this->uri->segment(3);
         $this->load->model("Model_Agent");
-        //Appel de la méthode
         $data['lesAgents'] = $this->Model_Agent->GetAllAgents($lAgent);
-        //Appel de la vue
         $this->load->view("v_agent",$data);
     }
 }
